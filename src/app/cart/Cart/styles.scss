@@ -1,0 +1,9 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins.scss';
+
+
+.Cart {
+  &__wrapper {
+    @extend %maxWidthWrapper;
+  }
+}

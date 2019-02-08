@@ -1,0 +1,12 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins.scss';
+
+
+.CartView {
+  &__title {
+    @extend %maxWidthWrapper;
+
+    margin-bottom: 16px;
+    font-size: 24px;
+  }
+}

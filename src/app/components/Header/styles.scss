@@ -1,0 +1,22 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins.scss';
+
+
+.Header {
+  padding: 16px 0;
+  background: $theme1;
+  color: $white;
+  margin-bottom: 32px;
+
+  &__wrapper {
+    @extend %maxWidthWrapper;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
