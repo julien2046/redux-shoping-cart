@@ -2,7 +2,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 module.exports = {
-  entry: ['./src/app'],
+  entry: ['./src/app/core'],
   output: {
     filename: 'dist/js/bundle.js',
   },

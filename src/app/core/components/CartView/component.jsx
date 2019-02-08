@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../Header/container';
-import Cart from '../../cart/Cart/container';
+import Cart from '../../../project/Cart/container';
 import './styles.scss';
 
 

@@ -17,14 +17,15 @@
 ## Instructions
 
 * N'ajoutez aucune librairie. Utilisez seulement ce qui est disponible dans `package.json`.
-* Travailler seulement dans le dossier suivant: `src/app/components/cart`
+* Travailler seulement dans le dossier suivant: `src/app/project`
 
 ## Livraison
 
-* SVP remplir le fichier `src/app/components/cart/report.txt` puis zipper le dossier de travail (`src/app/components/cart`).
+* SVP remplir le fichier `src/app/project/report.txt` puis zipper le dossier de travail (`src/app/project`).
 
 ## Aide
 
+* Start project with `npm run dev`
 * Les mises à jour au panier sont faites à travers une API locale servie par une application express (voir documentation des endpoints).
 * Un client HTTP est disponible dans `src/app/io/http.js`. Pré-configuré pour la communication JSON.
 
@@ -89,14 +90,15 @@ Structure de "snapshot":
 ## Instructions
 
 * Do not add any library, library or package. Only use what is provided in `package.json`.
-* Only work in the following folder: `src/app/components/cart`
+* Only work in the following folder: `src/app/project`
 
 ## Delivery
 
-* Please fill up the file `src/app/components/cart/report.txt` and provide a zip of work folder (`src/app/components/cart`).
+* Please fill up the file `src/app/project/report.txt` and provide a zip of work folder (`src/app/project`).
 
 ## Help & Tips
 
+* Start project with `npm run dev`
 * Cart updates are performed using a local API served by a small express app (see endpoint documentation).
 * HTTP client is found in `src/app/io/http.js`. Pre-configured to handle JSON communication.
 

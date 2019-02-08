@@ -7,8 +7,7 @@ import { createLogger } from 'redux-logger';
 import App from '../App/container';
 import reducer from '../../redux/reducers';
 import routes from '../../router/routes';
-
-import '../../../scss/app.scss';
+import '../../../../scss/app.scss';
 
 
 const logger = createLogger({

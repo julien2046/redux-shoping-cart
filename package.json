@@ -1,6 +1,6 @@
 {
   "name": "golo-frontend-test",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "GOLO Frontend technical test",
   "main": "index.html",
   "scripts": {
@@ -30,6 +30,7 @@
     "webpack": "^3.11.0"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
     "chai": "~4.2.0",
     "classnames": "~2.2.5",
     "css-loader": "~0.28.11",
