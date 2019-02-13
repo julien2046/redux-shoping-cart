@@ -1,16 +1,12 @@
 import React from 'react';
-
 import './styles.scss';
 
-const Cart = props => {
-  console.log(props.products);
-  
+const Cart = ({ title }) => {
+
   return (
     <div className="Cart">
       <div className="Cart__wrapper">
-        <button onClick={() => props.addProduct({id: 2, title: 'Product 2'})}>
-          Add Product
-        </button>
+        <h1>{title}</h1>
       </div>
     </div>
   );

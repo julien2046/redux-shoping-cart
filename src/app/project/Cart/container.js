@@ -1,6 +1,23 @@
+import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { addProduct, reveiceProducts } from '../actions';
-import component from './component';
+import { addProduct, fetchProducts } from '../actions';
+import View from './component';
+
+class Container extends Component {
+
+  componentDidMount() {
+    const { fetchProducts } = this.props;
+    fetchProducts();
+  }
+
+  render() {
+    const { products, title } = this.props;
+
+    return (
+      <View products={products} title={title} />
+    );
+  }
+}
 
 const mapState = state => ({
   title: state.app.name,
@@ -13,5 +30,5 @@ const mapDispatch = dispatch => ({
 
 export default connect(
   mapState,
-  mapDispatch
-)(component);
+  { fetchProducts }
+)(Container);
