@@ -14,13 +14,12 @@ class Container extends Component {
     const { products, title } = this.props;
 
     return (
-      <View products={products} title={title} />
+      <View products={products} />
     );
   }
 }
 
 const mapState = state => ({
-  title: state.app.name,
   products: state.cart.products
 });
 
