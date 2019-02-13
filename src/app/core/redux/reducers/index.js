@@ -6,10 +6,10 @@ export default (state, action) => ({
   app: {
     name: 'Golo Inc.',
   },
-  cart: cartReducer(state.cart, action),
+  cart: cartReducer(state.products, action),
   router: routerReducer(state.router, action, state),
   user: {
-    firstName: 'Steve',
-    lastName: 'Rogers',
+    firstName: 'Julien',
+    lastName: 'Banchetti',
   },
 });

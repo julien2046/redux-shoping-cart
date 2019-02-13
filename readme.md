@@ -48,7 +48,13 @@ Structure:
       price: 199,
       quantity: 1,
     },
-    ...
+    {
+      id: 'aa2d9254ytc6b0',
+      name: 'Blueberries',
+      image: 'blueberries.jpg',
+      price: 299,
+      quantity: 2,
+    }
   ],
   total: 199,
 }
@@ -59,14 +65,17 @@ Structure:
 Retourne un nouveau panier basé sur un payload minimal ("snapshot").
 La structure de retour est la même que mentionné dans la documentation de GET.
 
-Structure de "snapshot":
+Exemple: Pour créer l'exemple de panier montré dans la documentation de GET, ce payload doit être envoyé:
 ```javascript
 [
   {
     id: 'bb2d9254c8c6b0be',
-    quantity: 3,
+    quantity: 1,
   },
-  ...
+  {
+    id: 'aa2d9254ytc6b0',
+    quantity: 2,
+  }
 ]
 ```
 
@@ -121,7 +130,13 @@ Payload structure:
       price: 199,
       quantity: 1,
     },
-    ...
+    {
+      id: 'aa2d9254ytc6b0',
+      name: 'Blueberries',
+      image: 'blueberries.jpg',
+      price: 299,
+      quantity: 2,
+    }
   ],
   total: 199,
 }
@@ -131,13 +146,17 @@ Payload structure:
 
 Returns a new complete cart structure (see GET endpoint) based on a lightweight "snapshot" payload.
 
-Snapshot structure:
+i.e To create the cart example in the GET endpoint documentation above, the payload would have to look like this:
+
 ```javascript
 [
   {
     id: 'bb2d9254c8c6b0be',
-    quantity: 3,
+    quantity: 1,
   },
-  ...
+  {
+    id: 'aa2d9254ytc6b0',
+    quantity: 2,
+  }
 ]
 ```

@@ -16,8 +16,14 @@ const logger = createLogger({
   timestamp: false,
 });
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(reducer, {}, composeEnhancers(
+   applyMiddleware(thunk, logger)
+ ));
+
 export default (
-  <Provider store={createStore(reducer, {}, applyMiddleware(thunk, logger))}>
+  <Provider store={store}>
     <RouterProvider router={createRouter(routes)}>
       <App />
     </RouterProvider>
