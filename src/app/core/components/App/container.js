@@ -4,7 +4,6 @@ import App from './component';
 
 
 const mapState = state => ({
-  counter: state.counter,
   route: getRoute(state),
 });
 

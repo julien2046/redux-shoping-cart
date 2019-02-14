@@ -10,14 +10,23 @@ function formatNumber(num) {
 }
 
 
-const Cart = ({ products }) => {
+const Cart = props => {
+  const { products, handleChange = f => f } = props;
+  let input;
 
   return (
     <div className="Cart">
       <div className="Cart__wrapper">
         {products.map(product => (
-          <li key={product.id}><img src={product.image} width="100" height="100"/>
-            {product.name} {formatNumber(calcPrice(product.quantity, product.price))}$
+          <li key={product.id}>
+            <img src={product.image} width="100" height="100"/>
+            {product.name} : {formatNumber(product.price)}$
+            <input
+              ref={node => (input = node)}
+              type="number"
+              value={product.quantity}
+              onChange={() => handleChange(event, product.id)}
+            />
           </li>
         ))}
       </div>
@@ -25,6 +34,6 @@ const Cart = ({ products }) => {
   );
 }
 
-// Cart.propTypes = {};
+Cart.propTypes = {};
 
 export default Cart;

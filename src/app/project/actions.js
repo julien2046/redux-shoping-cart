@@ -1,7 +1,8 @@
 import fetch from 'isomorphic-fetch';
 
-export const REVEIVE_PRODUCTS = 'REVEIVE_PRODUCTS';
+export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
+export const UPDATE_QUANTITY = 'UPDATE_QUANTITY';
 
 export function fetchProducts() {
 
@@ -9,15 +10,16 @@ export function fetchProducts() {
     return fetch("http://localhost:3000/api/v1/cart")
       .then(response => response.json())
       .then(json => {
-        dispatch({ type: REVEIVE_PRODUCTS, payload: json });
+        dispatch({ type: RECEIVE_PRODUCTS, payload: json });
       });
   };
 }
 
-
-export function addProduct(payload) {
+export function updateQuantity(quantity, id, products) {
   return {
-    type: ADD_PRODUCT,
-    payload
+    type: UPDATE_QUANTITY,
+    quantity,
+    id,
+    products
   }
 }
