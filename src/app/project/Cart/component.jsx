@@ -28,11 +28,13 @@ const Cart = props => {
                 <input
                   className="Cart__quantity"
                   type="number"
+                  min="1"
+                  max="99"
                   value={product.quantity}
                   onChange={() => handleChange(event, product.id)}
                 />
                 <p className="Cart__element-total">Total : {formatNumber(calcPrice(product.quantity, product.price))}$</p>
-                <a href='#' onClick={() => handleClick(event)}>Remove</a>
+                <a href='#' onClick={() => handleClick(event, product.id)}>Remove</a>
               </div>
             </li>
           ))}

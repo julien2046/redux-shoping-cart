@@ -1,7 +1,8 @@
 import {
   RECEIVE_PRODUCTS,
-  ADD_PRODUCT,
-  UPDATE_QUANTITY } from './actions';
+  UPDATE_QUANTITY,
+  REMOVE_PRODUCT
+} from './actions';
 
 const initialState = {
   products: [],
@@ -16,7 +17,16 @@ export default (state = initialState, action) => {
   }
 
   if (action.type === UPDATE_QUANTITY) {
+    console.log(state);
     const products = action.products.map( product => product.id === action.id ? {...product, quantity: action.quantity} : product);
+    return Object.assign({}, state, {
+      products: state.products.concat(products)
+    })
+  }
+
+  if (action.type === REMOVE_PRODUCT) {
+    const products = action.products.filter(product => product.id !== action.id);
+
     return Object.assign({}, state, {
       products: state.products.concat(products)
     })

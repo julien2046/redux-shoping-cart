@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { addProduct, fetchProducts, updateQuantity } from '../actions';
+import { fetchProducts, updateQuantity, removeProduct } from '../actions';
 import View from './component';
 
 class Container extends Component {
@@ -12,16 +12,23 @@ class Container extends Component {
 
   handleChange = (event, id) => {
     const { updateQuantity, products } = this.props;
-    const quantity = event.target.value;
+    const quantity = event.target.value != '' ? parseInt(event.target.value) : 1;
     updateQuantity(quantity, id, products);
   }
 
-  handleClick = event => {
+  handleClick = (event, id) => {
     event.preventDefault();
+
+    const { removeProduct, products } = this.props;
+    removeProduct(id, products)
   }
 
-  handleSubmit = event => {
+  handleSubmit = (event, id) => {
     event.preventDefault();
+
+    const { updateQuantity, products } = this.props;
+    const quantity = event.target.value;
+    updateQuantity(quantity, id, products);
   }
 
   render() {
@@ -39,5 +46,5 @@ const mapState = state => ({
 
 export default connect(
   mapState,
-  { fetchProducts, updateQuantity }
+  { fetchProducts, updateQuantity, removeProduct }
 )(Container);
