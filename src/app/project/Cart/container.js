@@ -5,30 +5,30 @@ import View from './component';
 
 class Container extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {value: ''};
-
-    this.handleChange = this.handleChange.bind(this);
-  //  this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
   componentDidMount() {
     const { fetchProducts } = this.props;
     fetchProducts();
   }
 
-  handleChange(event, id) {
+  handleChange = (event, id) => {
     const { updateQuantity, products } = this.props;
     const quantity = event.target.value;
     updateQuantity(quantity, id, products);
+  }
+
+  handleClick = event => {
+    event.preventDefault();
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
   }
 
   render() {
     const { products, title } = this.props;
 
     return (
-      <View products={products} handleChange={this.handleChange} />
+      <View products={products} handleChange={this.handleChange} handleClick={this.handleClick} handleSubmit={this.handleSubmit} />
     );
   }
 }

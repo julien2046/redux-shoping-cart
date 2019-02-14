@@ -5,5 +5,53 @@
 .Cart {
   &__wrapper {
     @extend %maxWidthWrapper;
+    padding: 10px;
+
+  }
+
+  &__list {
+    padding-left: 0;
+  }
+
+  &__list-element {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 380px;
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+
+    list-style: none;
+    border: 1px solid black;
+  }
+
+  &__image-container {
+
+  }
+
+  &__element-info {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+
+  &__element-image {
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: red;
+  }
+
+  &__element-name {
+    margin: 0;
+  }
+
+  &__element-total {
+    margin: 0;
+  }
+
+  &__quantity {
+    width: 40px;
   }
 }
